@@ -15,6 +15,9 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "plugins" },
   },
   defaults = {
@@ -34,3 +37,5 @@ require("lazy").setup({
     },
   },
 })
+
+require("nvim-treesitter.install").compilers = { "clang" }
