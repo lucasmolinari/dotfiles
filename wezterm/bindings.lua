@@ -5,6 +5,8 @@ local module = {}
 
 function module.set_bindings(config)
 	config.keys = {
+		-- Env
+		{ key = "e", mods = "CTRL", action = act.SendString("env/Scripts/activate\n") },
 		-- Window
 		{ key = "q", mods = "CTRL", action = act.QuitApplication },
 		{
@@ -34,8 +36,27 @@ function module.set_bindings(config)
 		-- Tab
 		{
 			key = "t",
-			mods = "SHIFT|ALT",
-			action = act.SpawnTab("CurrentPaneDomain"),
+			mods = "CTRL|SHIFT",
+			action = act.SpawnCommandInNewTab({
+				cwd = "E:/Lucas/codes/",
+				domain = "CurrentPaneDomain",
+			}),
+		},
+		{
+			key = "c",
+			mods = "CTRL|SHIFT",
+			action = act.SpawnCommandInNewTab({
+				cwd = "C:/Users/Lucas/.config",
+				domain = "CurrentPaneDomain",
+			}),
+		},
+		{
+			key = "l",
+			mods = "CTRL|SHIFT",
+			action = act.SpawnCommandInNewTab({
+				cwd = wezterm.home_dir .. "/AppData/Local/nvim",
+				domain = "CurrentPaneDomain",
+			}),
 		},
 		{
 			key = "w",

@@ -12,18 +12,19 @@ return {
     },
   },
   {
-    "jacoborus/tender.vim",
+    "sho-87/kanagawa-paper.nvim",
+    lazy = false,
+    priority = 1000,
   },
-  {
-    "sainnhe/gruvbox-material",
-  },
-  {
-    "savq/melange-nvim",
-  },
+  { "jacoborus/tender.vim" },
+  { "sainnhe/gruvbox-material" },
+  { "savq/melange-nvim" },
+  { "rose-pine/neovim", name = "rose-pine" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "kanagawa-paper",
     },
   },
 }
