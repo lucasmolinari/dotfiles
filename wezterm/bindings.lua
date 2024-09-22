@@ -43,6 +43,13 @@ function module.set_bindings(config)
 			action = act.CloseCurrentTab({ confirm = true }),
 		},
 	}
+	for i = 1, 9 do
+		table.insert(config.keys, {
+			key = tostring(i),
+			mods = "CTRL",
+			action = act.ActivateTab(i - 1),
+		})
+	end
 end
 
 return module

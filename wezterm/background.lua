@@ -4,7 +4,7 @@ function module.set_bg(config)
 	config.background = {
 		{
 			source = {
-				File = { path = "C:/Users/Lucas/.config/wezterm/backgrounds/blue-mountains.png" },
+				File = { path = "C:/Users/Lucas/.config/wezterm/backgrounds/background.jpg" },
 			},
 			height = "Cover",
 			width = "Cover",

@@ -11,11 +11,11 @@ config.launch_menu = {
 		args = { "powershell.exe" },
 	},
 }
-config.default_cwd = "G:/codes/"
+config.default_cwd = "E:/Lucas/Codes"
 
 config.color_scheme = "Gruvbox Material (Gogh)"
 
-config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMono NFM")
 config.font_size = 16
 
 config.window_decorations = "RESIZE"
