@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local background = require("background")
 
 local module = {}
 
@@ -7,6 +8,14 @@ function module.set_bindings(config)
 	config.keys = {
 		-- Env
 		{ key = "e", mods = "CTRL", action = act.SendString("env/Scripts/activate\n") },
+		-- Toggle background
+		{
+			key = "B",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action_callback(function(window, _)
+				background.toggle_background(window)
+			end),
+		},
 		-- Window
 		{ key = "q", mods = "CTRL", action = act.QuitApplication },
 		{
