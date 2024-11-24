@@ -11,9 +11,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', 'J', ':m .+1<CR>==', { noremap = true, silent = true, desc = 'Move line down' })
-vim.keymap.set('n', 'K', ':m .-2<CR>==', { noremap = true, silent = true, desc = 'Move line up' })
-
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = 'Delete currrent buffer' })
 vim.api.nvim_set_keymap('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true, desc = 'Move focus to left buffer' })
 vim.api.nvim_set_keymap('n', 'L', ':BufferLineCycleNext<CR>', { noremap = true, silent = true, desc = 'Move focus to right buffer' })
@@ -25,3 +22,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- rustacean
+local bufnr = vim.api.nvim_get_current_buf()
+vim.keymap.set(
+  'n',
+  'K', -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
+  function()
+    vim.cmd.RustLsp { 'hover', 'actions' }
+  end,
+  { silent = true, buffer = bufnr }
+)
+
+vim.keymap.set('n', '<leader>re', function()
+  vim.cmd.RustLsp { 'explainError', 'cycle' }
+end, { silent = true, buffer = bufnr, desc = '[E]xplain error' })
+
+vim.keymap.set('n', '<leader>rd', function()
+  vim.cmd.RustLsp { 'renderDiagnostic', 'cycle' }
+end, { silent = true, buffer = bufnr, desc = '[D]iagnostic render' })

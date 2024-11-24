@@ -94,7 +94,6 @@ return {
       local servers = {
         clangd = {},
         pyright = {},
-        rust_analyzer = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -106,12 +105,17 @@ return {
         },
       }
 
-      require('mason').setup()
+      require('mason').setup {
+        PATH = 'append',
+      }
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
-        'rust-analyzer',
+        'isort',
+        'black',
+        'prettierd',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
