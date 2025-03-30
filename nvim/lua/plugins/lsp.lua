@@ -94,6 +94,54 @@ return {
       local servers = {
         clangd = {},
         pyright = {},
+        intelephense = {
+          stubs = {
+            'apache',
+            'bcmath',
+            'bz2',
+            'calendar',
+            'Core',
+            'ctype',
+            'curl',
+            'date',
+            'dom',
+            'exif',
+            'fileinfo',
+            'filter',
+            'gd',
+            'hash',
+            'iconv',
+            'json',
+            'libxml',
+            'mbstring',
+            'mysql',
+            'mysqli',
+            'openssl',
+            'pcntl',
+            'pcre',
+            'PDO',
+            'pdo_mysql',
+            'pdo_sqlite',
+            'Phar',
+            'posix',
+            'readline',
+            'Reflection',
+            'session',
+            'SimpleXML',
+            'sockets',
+            'sodium',
+            'SPL',
+            'standard',
+            'tokenizer',
+            'xml',
+            'xmlreader',
+            'xmlwriter',
+            'xsl',
+            'zip',
+            'zlib',
+            'laravel',
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
@@ -111,13 +159,14 @@ return {
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'angular-language-server',
         'stylua',
         'isort',
         'black',
         'prettierd',
         'prettier',
         'html',
-        'vtsls'
+        'vtsls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

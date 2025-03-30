@@ -33,6 +33,7 @@ return {
         python = { 'isort', 'black' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         rust = { 'rust-analyzer', lsp_format = 'fallback' },
+        php = { { 'pint', 'php_cs_fixer' } },
       },
     },
   },
@@ -49,21 +50,15 @@ return {
           end
           return 'make install_jsregexp'
         end)(),
-        dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
-        },
       },
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+    },
+    formatting = {
+      format = function(entry, item)
+        return require('nvim-highlight-colors').format(entry, item)
+      end,
     },
     config = function()
       -- See `:help cmp`

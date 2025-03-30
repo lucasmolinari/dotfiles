@@ -22,7 +22,7 @@ local schemes = {
   { 'catppuccin/nvim', name = 'catppuccin' },
 }
 
-local curr = 'gruvbox'
+local curr = 'gruvbox-material'
 return {
   (function()
     for _, scheme in ipairs(schemes) do

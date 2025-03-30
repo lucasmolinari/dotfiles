@@ -36,6 +36,22 @@ return {
       cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end,
   },
+  {
+    'windwp/nvim-ts-autotag',
+    version = '*',
+    config = function()
+      require('nvim-ts-autotag').setup {}
+    end,
+  },
+  {
+    'brenoprata10/nvim-highlight-colors',
+    version = '*',
+    opts = {
+      render = 'foreground',
+      virtual_symbol = '■',
+      virtual_symbol_position = 'eol',
+    },
+  },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
