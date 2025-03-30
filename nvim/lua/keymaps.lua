@@ -23,22 +23,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- rustacean
-local bufnr = vim.api.nvim_get_current_buf()
-vim.keymap.set(
-  'n',
-  'K', -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
-  function()
-    vim.cmd.RustLsp { 'hover', 'actions' }
-  end,
-  { silent = true, buffer = bufnr }
-)
-
-vim.keymap.set('n', '<leader>re', function()
-  vim.cmd.RustLsp { 'explainError', 'cycle' }
-end, { silent = true, buffer = bufnr, desc = '[E]xplain error' })
-
-vim.keymap.set('n', '<leader>rd', function()
-  vim.cmd.RustLsp { 'renderDiagnostic', 'cycle' }
-end, { silent = true, buffer = bufnr, desc = '[D]iagnostic render' })

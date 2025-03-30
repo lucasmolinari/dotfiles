@@ -16,6 +16,7 @@ require('lazy').setup({
   require 'plugins.lint',
   require 'plugins.neo-tree',
   require 'plugins.bufferline',
+  require 'plugins.git',
 
   -- Collection of various small independent plugins/modules
   require 'plugins.etc',
