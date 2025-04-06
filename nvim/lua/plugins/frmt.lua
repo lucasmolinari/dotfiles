@@ -30,10 +30,11 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
+        python = { 'isort', 'black', stop_after_first = true },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         rust = { 'rust-analyzer', lsp_format = 'fallback' },
-        php = { { 'pint', 'php_cs_fixer' } },
+        php = { 'pint', 'php_cs_fixer', stop_after_first = true },
+        go = { 'gofmt', 'goimports', 'gofumpt', stop_after_first = true },
       },
     },
   },

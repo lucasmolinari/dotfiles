@@ -22,6 +22,7 @@ return {
         'vim',
         'vimdoc',
         'rust',
+        'go',
       },
       auto_install = true,
       highlight = {
