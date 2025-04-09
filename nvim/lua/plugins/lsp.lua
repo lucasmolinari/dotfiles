@@ -27,26 +27,12 @@ return {
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
       {
-        'SmiteshP/nvim-navic',
-        dependencies = 'neovim/nvim-lspconfig',
-        config = function()
-          require('nvim-navic').setup {
-            highlight = true,
-            separator = ' > ',
-            depth_limit = 5,
-            icons = {
-              Function = 'ƒ ',
-              Method = 'm ',
-            },
-            click = true,
-            format_text = function(text, _)
-              if text == 'closure' then
-                return '[closure]'
-              end
-              return text
-            end,
-          }
-        end,
+        'SmiteshP/nvim-navbuddy',
+        dependencies = {
+          'SmiteshP/nvim-navic',
+          'MunifTanjim/nui.nvim',
+        },
+        opts = { lsp = { auto_attach = true } },
       },
     },
     config = function()

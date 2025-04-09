@@ -26,6 +26,28 @@ return {
     end,
   },
   {
+    'SmiteshP/nvim-navic',
+    dependencies = 'neovim/nvim-lspconfig',
+    config = function()
+      require('nvim-navic').setup {
+        highlight = true,
+        separator = ' > ',
+        depth_limit = 5,
+        icons = {
+          Function = 'ƒ ',
+          Method = 'm ',
+        },
+        click = true,
+        format_text = function(text, _)
+          if text == 'closure' then
+            return '[closure]'
+          end
+          return text
+        end,
+      }
+    end,
+  },
+  {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     dependencies = { 'hrsh7th/nvim-cmp' },
