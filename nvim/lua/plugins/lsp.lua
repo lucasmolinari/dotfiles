@@ -26,6 +26,28 @@ return {
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
+      {
+        'SmiteshP/nvim-navic',
+        dependencies = 'neovim/nvim-lspconfig',
+        config = function()
+          require('nvim-navic').setup {
+            highlight = true,
+            separator = ' > ',
+            depth_limit = 5,
+            icons = {
+              Function = 'ƒ ',
+              Method = 'm ',
+            },
+            click = true,
+            format_text = function(text, _)
+              if text == 'closure' then
+                return '[closure]'
+              end
+              return text
+            end,
+          }
+        end,
+      },
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -74,6 +96,10 @@ return {
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
+          end
+          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentSymbol) then
+            require('nvim-navic').attach(client, event.buf)
+            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
           end
         end,
       })
