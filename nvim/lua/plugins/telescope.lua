@@ -70,6 +70,11 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      vim.keymap.set('', '<leader>sp', function()
+        builtin.find_files { cwd = '~/code' }
+      end, { desc = '[S]earch [P]rojects directory' })
+
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
     end,

@@ -9,7 +9,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  require 'plugins.fzz',
+  require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.frmt',
   require 'plugins.treesitter',
@@ -17,6 +17,8 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins.bufferline',
   require 'plugins.git',
+  require 'plugins.flash',
+  require 'plugins.yazi',
 
   -- Collection of various small independent plugins/modules
   require 'plugins.etc',

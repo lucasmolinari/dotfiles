@@ -23,6 +23,7 @@ return {
         'vimdoc',
         'rust',
         'go',
+        'zig',
       },
       auto_install = true,
       highlight = {

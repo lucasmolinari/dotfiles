@@ -1,4 +1,5 @@
 return {
+  { 'mhinz/vim-startify' },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   {
     'echasnovski/mini.nvim',
@@ -69,7 +70,6 @@ return {
     'brenoprata10/nvim-highlight-colors',
     version = '*',
     opts = {
-      render = 'foreground',
       virtual_symbol = '■',
       virtual_symbol_position = 'eol',
     },

@@ -97,8 +97,17 @@ return {
         for type, icon in pairs(signs) do
           diagnostic_signs[vim.diagnostic.severity[type]] = icon
         end
-        vim.diagnostic.config { signs = { text = diagnostic_signs } }
+        vim.diagnostic.config {
+          signs = { text = diagnostic_signs },
+        }
       end
+
+      vim.diagnostic.config {
+        virtual_text = {
+          prefix = '▶',
+          spacing = 2,
+        },
+      }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
@@ -185,6 +194,7 @@ return {
         'html',
         'vtsls',
         'gopls',
+        'zls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

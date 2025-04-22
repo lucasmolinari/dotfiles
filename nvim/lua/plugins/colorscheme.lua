@@ -20,6 +20,10 @@ local schemes = {
   { 'ellisonleao/gruvbox.nvim', name = 'gruvbox' },
   { 'rose-pine/neovim', name = 'rose-pine' },
   { 'catppuccin/nvim', name = 'catppuccin' },
+  {
+    'metalelf0/base16-black-metal-scheme',
+    name = 'base16-black-metal',
+  },
 }
 
 local curr = 'gruvbox-material'
