@@ -55,7 +55,9 @@ alias kus='setxkbmap -layout us -variant intl'
 alias kbr='setxkbmap -model abnt2 -layout br -variant abnt2'
 alias bt='systemctl start bluetooth.service && bluetoothctl'
 alias spectacle='spectacle -bcr'
-alias yp='yazi ~/code'
+alias yp='y ~/code'
+alias st='sudo systemctl start nginx && sudo systemctl start mysqld'
+alias chz='chezmoi'
 
 # Style
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -81,3 +83,4 @@ setopt hist_save_no_dups
 setopt hist_find_no_dups
 
 export PATH="$HOME/code/z/dgen/zig-out/bin:$PATH"
+export EDITOR="nvim"

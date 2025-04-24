@@ -26,7 +26,7 @@ local schemes = {
   },
 }
 
-local curr = 'gruvbox-material'
+local curr = 'base16-black-metal'
 return {
   (function()
     for _, scheme in ipairs(schemes) do
