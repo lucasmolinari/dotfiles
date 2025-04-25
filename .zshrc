@@ -31,6 +31,7 @@ zinit cdreplay -q
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
+
 # Yazi
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -53,6 +54,8 @@ alias ls='ls --color'
 alias lgit='lazygit'
 alias kus='setxkbmap -layout us -variant intl'
 alias kbr='setxkbmap -model abnt2 -layout br -variant abnt2'
+alias kst='xmodmap -e "keycode 62 = dead_tilde"'
+alias kss='xmodmap -e "keycode 62 = Shift_R"'
 alias bt='systemctl start bluetooth.service && bluetoothctl'
 alias spectacle='spectacle -bcr'
 alias yp='y ~/code'

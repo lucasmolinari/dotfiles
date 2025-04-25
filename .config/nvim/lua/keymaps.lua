@@ -20,7 +20,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>b', '', { noremap = true, silent = true, desc = '[B]uffer' })
-vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = 'Delete currrent buffer' })
+vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = '[D]elete current buffer' })
+
+vim.api.nvim_set_keymap('n', '<leader>bc', ':let @+ = expand("%:p")<CR>', { noremap = true, silent = true, desc = '[C]opy current buffer' })
 
 -- Bufferline
 vim.api.nvim_set_keymap('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true, desc = 'Move focus to left buffer' })
