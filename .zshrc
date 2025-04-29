@@ -49,6 +49,11 @@ bindkey '^n' history-search-forward
 bindkey '^y' autosuggest-accept
 bindkey '^ ' autosuggest-accept
 
+# Ctrl-Z to run fg when in terminal
+_zsh_cli_fg() { fg; }
+zle -N _zsh_cli_fg
+bindkey '^Z' _zsh_cli_fg
+
 # Alias
 alias ls='ls --color'
 alias lgit='lazygit'
