@@ -13,7 +13,7 @@ exec --no-startup-id flameshot
 exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
 exec_always --no-startup-id feh --bg-fill $HOME/Images/lain.jpg
 
-exec --no-startup-id ~/scripts/display.sh eDP HDMI-A-0 left underscan
+exec --no-startup-id ~/scripts/sh/display.sh eDP HDMI-A-0 left underscan
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
