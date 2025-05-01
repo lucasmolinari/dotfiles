@@ -28,9 +28,37 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # Integrations
-eval "$(fzf --zsh)"
+# xref: https://github.com/starship/starship/issues/3418#issuecomment-2477375663
+if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
+      "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
+    zle -N zle-keymap-select "";
+fi
 eval "$(starship init zsh)"
 
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh --cmd cd)"
+
+# # # Cursor Change in VI mode
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[1 q'  # block cursor
+  else
+    echo -ne '\e[5 q'  # beam cursor
+  fi
+}
+zle -N zle-keymap-select
+
+function zle-line-init {
+  echo -ne '\e[5 q'  # beam cursor
+}
+zle -N zle-line-init
+
+function reset-cursor {
+  echo -ne '\e[1 q'
+}
+trap reset-cursor EXIT
+
+# # #
 
 # Yazi
 function y() {
