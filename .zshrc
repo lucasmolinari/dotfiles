@@ -92,7 +92,7 @@ alias kss='xmodmap -e "keycode 62 = Shift_R"'
 alias bt='systemctl start bluetooth.service && bluetoothctl'
 alias spectacle='spectacle -bcr'
 alias yp='y ~/code'
-alias st='sudo systemctl start nginx && sudo systemctl start mysqld'
+alias st='sudo systemctl start nginx && sudo systemctl start mysqld && sudo systemctl start php-fpm'
 alias chz='chezmoi'
 
 # Style
