@@ -1,0 +1,242 @@
+# Colors:
+# ---------
+# There is a list of predefined colors. These include:
+# - black
+# - white
+# - (dark) gray
+# - (light) red
+# - (light) blue
+# - (light) green
+# - (light) magenta
+# - (light) cyan
+# - (light) yellow
+# - orange
+#
+# You can also utilize custom colors with hex color codes.
+# "#87CEEB" will create a Sky Blue color.
+
+# ---------
+# 
+# Modifiers:
+# ---------
+# There is a number of modifiers you can use. These can be combined by
+# delimiting them with a comma (e.g. "bold,italic"). The modifiers are:
+# - bold
+# - dim
+# - italic
+# - underlined
+# - reverse
+# - crossed out
+# - hidden
+# ---------
+
+tty = 2
+
+do_log = false
+main_log_path = "/var/log/lemurs.log"
+client_log_path = "/var/log/lemurs.client.log"
+cache_path = "/var/cache/lemurs"
+
+
+pam_service = "lemurs"
+
+system_shell = "/bin/sh"
+
+initial_path = "/usr/local/sbin:/usr/local/bin:/usr/bin"
+
+# The type flag that will be appended to the shell that calls the session
+# environment. This may depend on your shell. Options:
+# - 'none'. Disables calling a login shell
+# - 'short'. Produces the `-l` flag. Supported by most shells.
+# - 'long'. This produces the `--login` flag and is suited for bash and zsh.
+shell_login_flag = "short"
+
+# Possible values:
+# - default: Initially focus on first non-cached value
+# - no-focus: No initial focus
+# - environment: Initially focus on the environment selector
+# - username: Initially focus on the username field
+# - password: Initially focus on the password field
+focus_behaviour = "default"
+
+[background]
+show_background = false
+
+[background.style]
+color = "black"
+show_border = true
+border_color = "white"
+
+[power_controls]
+hint_margin = 2
+entries = []
+
+# Example
+# Reboot to another os option
+#[[power_controls.entries]]
+## The text in the top-left to display how to reboot.
+#hint = "Reboot to OS"
+#
+## The color and modifiers of the hint in the top-left corner
+#hint_color = "dark gray"
+#hint_modifiers = ""
+#
+## The key used to reboot. Possibilities are F1 to F12.
+#key = "F3"
+## The command that is executed when the key is pressed
+#cmd = "efibootmgr -n0 && systemctl reboot -l"
+
+
+# If you want to remove the base_entries
+# base_entries = []
+
+# Shutdown option
+[[power_controls.base_entries]]
+hint = "Shutdown"
+hint_color = "dark gray"
+hint_modifiers = ""
+key = "F1"
+cmd = "systemctl poweroff -l"
+[[power_controls.base_entries]]
+hint = "Reboot"
+hint_color = "dark gray"
+hint_modifiers = ""
+key = "F2"
+cmd = "systemctl reboot -l"
+[environment_switcher]
+# Terms:
+# ---------
+# Movers: indicators which show which direction one can move whilst selecting
+# the desktop environment
+# Selected: The currently selected desktop environment.
+# Neighbours: The adjacent desktop environment to the one current selected
+#
+# Visualisation:
+#
+#    <     i3       bspwm     awesome   >
+#
+#    ^      ^         ^          ^      ^
+#    |      |         |          |      |
+#  mover    |      selected      |    mover
+#           |                    |      
+#       neighbour            neighbour
+# ---------
+#
+
+# Control the visiblity of the switcher
+# Options:
+# - "visible" - Always show the switcher [default]
+# - "hidden"  - Always hide the switcher
+# - [key]     - F1-F12 to be able to toggle the visiblity
+switcher_visibility = "F3"
+
+# The text in the top-left to display how to toggle the switcher. The text
+# '%key%' will be replaced with the switcher_visibility key. This is not shown
+# if switcher_visiblity is set to "visible" or "hidden".
+toggle_hint = "Switcher %key%"
+
+toggle_hint_color = "dark gray"
+toggle_hint_modifiers = ""
+
+
+# Show an option for the TTY shell when logging in as one of the environments. 
+# NOTE: it is always shown when no viable options are found. 
+include_tty_shell = false
+
+remember = true
+
+show_movers = true
+mover_color = "dark gray" 
+mover_modifiers = ""
+mover_color_focused = "orange"
+mover_modifiers_focused = "bold" 
+
+left_mover = "<"
+right_mover = ">"
+
+mover_margin = 1
+
+show_neighbours = false
+# neighbour_color = "dark gray"
+# neighbour_modifiers = ""
+# neighbour_color_focused = "gray"
+# neighbour_modifiers_focused = ""
+# neighbour_margin = 1
+
+# Selected's color and modifiers whilst the selector is unfocused
+selected_color = "gray"
+selected_modifiers = "bold"
+selected_color_focused = "white"
+selected_modifiers_focused = "bold"
+
+# The length of the name of the desktop environment which is displayed.
+max_display_length = 8
+
+no_envs_text = "No environment found"
+no_envs_color = "white"
+no_envs_modifiers = ""
+no_envs_color_focused = "red"
+no_envs_modifiers_focused = ""
+
+[username_field]
+remember = true
+
+[username_field.style]
+show_title = true
+title = "Login"
+
+title_color = "white"
+content_color = "white"
+
+title_color_focused = "orange"
+content_color_focused = "orange"
+
+show_border = true
+border_color = "white"
+border_color_focused = "orange"
+
+use_max_width = true
+max_width = 48
+
+[password_field]
+
+content_replacement_character = "*"
+
+[password_field.style]
+show_title = true
+title = "Password"
+
+title_color = "white"
+content_color = "white"
+
+title_color_focused = "orange"
+content_color_focused = "orange"
+
+show_border = true
+border_color = "white"
+border_color_focused = "orange"
+
+use_max_width = true
+max_width = 48
+
+[x11]
+xserver_log_path = "/var/log/lemurs.xorg.log"
+
+x11_display = ":1"
+
+xserver_timeout_secs = 60
+
+xserver_path = "/usr/bin/X"
+
+xauth_path = "/usr/bin/xauth"
+
+scripts_path = "/etc/lemurs/wms"
+
+xsetup_path = "/etc/lemurs/xsetup.sh"
+
+xsessions_path = "/usr/share/xsessions"
+
+[wayland]
+scripts_path = "/etc/lemurs/wayland"
+wayland_sessions_path = "/usr/share/wayland-sessions"
+
