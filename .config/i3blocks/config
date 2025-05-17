@@ -1,0 +1,29 @@
+[cpu]
+command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
+interval=5
+label=cpu 
+color=#dd9999
+
+[battery]
+command=/home/lmolinari/dotfiles/.config/i3blocks/bat.pl
+env=BAT_NUMBER=1
+color=#dd9999
+interval=30
+
+[memory]
+command=free -h | awk '/^Mem/ {print $3 "/" $2}'
+interval=10
+label=mem 
+color=#dd9999
+
+[volume]
+command=/home/lmolinari/dotfiles/.config/i3blocks/vol.pl
+interval=100
+signal=1
+label=vol 
+color=#dd9999
+
+[time]
+command=date "+%d/%m/%Y %H:%M"
+interval=1
+color=#dd9999
