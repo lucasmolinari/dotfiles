@@ -1,4 +1,5 @@
 return {
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'mhinz/vim-startify' },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   {
@@ -74,7 +75,21 @@ return {
       virtual_symbol_position = 'eol',
     },
   },
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  {
+    'alexghergh/nvim-tmux-navigation',
+    config = function()
+      require('nvim-tmux-navigation').setup {
+        keybindings = {
+          left = '<M-h>',
+          down = '<M-j>',
+          up = '<M-k>',
+          right = '<M-l>',
+          last_active = '<M-\\>',
+          next = '<M-Space>',
+        },
+      }
+    end,
+  },
   {
     'folke/which-key.nvim',
     event = 'VimEnter',
