@@ -84,16 +84,15 @@ bindkey '^Z' _zsh_cli_fg
 
 # Alias
 alias ls='ls --color'
+alias spectacle='spectacle -bcr'
 alias lgit='lazygit'
+
 alias kus='setxkbmap -layout us -variant intl'
 alias kbr='setxkbmap -model abnt2 -layout br -variant abnt2'
 alias kst='xmodmap -e "keycode 62 = dead_tilde"'
 alias kss='xmodmap -e "keycode 62 = Shift_R"'
-alias bt='systemctl start bluetooth.service && bluetoothctl'
-alias spectacle='spectacle -bcr'
-alias yp='y ~/code'
+
 alias st='sudo systemctl start nginx && sudo systemctl start mysqld && sudo systemctl start php-fpm'
-alias chz='chezmoi'
 
 # Style
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
