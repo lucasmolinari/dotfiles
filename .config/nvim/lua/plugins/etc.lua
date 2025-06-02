@@ -5,9 +5,6 @@ return {
   {
     'echasnovski/mini.nvim',
     config = function()
-      -- Better Around/Inside textobjects
-      --
-      -- Examples:
       --  - va)  - [V]isually select [A]round [)]paren
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
       --  - ci'  - [C]hange [I]nside [']quote
@@ -17,6 +14,12 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+
+      -- - ga  - Start [A]lign
+      -- - gA  - Start [A]lign with preview
+      -- - ga= - [A]lign with '=' as split
+      -- - ga, - [A]lign with ',' as split
+      require('mini.align').setup()
 
       local statusline = require 'mini.statusline'
       statusline.setup { use_icons = true }
