@@ -78,7 +78,11 @@ bindkey '^y' autosuggest-accept
 bindkey '^ ' autosuggest-accept
 
 # Ctrl-Z to run fg when in terminal
-_zsh_cli_fg() { fg; }
+_zsh_cli_fg() {
+  fg
+  zle vi-insert
+  zle zle-keymap-select
+}
 zle -N _zsh_cli_fg
 bindkey '^Z' _zsh_cli_fg
 
