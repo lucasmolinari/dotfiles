@@ -1,3 +1,23 @@
+# scheme: "Black Metal"
+# author: "metalelf0 (https://github.com/metalelf0)"
+set $base00 "#000000"
+set $base01 "#121212"
+set $base02 "#222222"
+set $base03 "#333333"
+set $base04 "#999999"
+set $base05 "#c1c1c1"
+set $base06 "#999999"
+set $base07 "#c1c1c1"
+set $base08 "#5f8787"
+set $base09 "#aaaaaa"
+set $base0A "#a06666"
+set $base0B "#dd9999"
+set $base0C "#aaaaaa"
+set $base0D "#888888"
+set $base0E "#999999"
+set $base0F "#444444"
+
+set $red "#ff0000"
 set $mod Mod4
 set $modalt Mod1
 set $TERMINAL /sbin/kitty
@@ -22,6 +42,8 @@ bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOUR
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+bindsym $mod+d exec --no-startup-id dmenu_run -nb $base00 -nf $base04 -sb $base0B -sf $base00
+
 floating_modifier $mod
 
 tiling_drag modifier titlebar
@@ -32,7 +54,6 @@ bindsym Print exec spectacle -bcr
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id dmenu_run
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -111,27 +132,6 @@ mode "resize" {
 }
 
 for_window [class="kitty"] border pixel 1 
-
-# scheme: "Black Metal"
-# author: "metalelf0 (https://github.com/metalelf0)"
-set $base00 "#000000"
-set $base01 "#121212"
-set $base02 "#222222"
-set $base03 "#333333"
-set $base04 "#999999"
-set $base05 "#c1c1c1"
-set $base06 "#999999"
-set $base07 "#c1c1c1"
-set $base08 "#5f8787"
-set $base09 "#aaaaaa"
-set $base0A "#a06666"
-set $base0B "#dd9999"
-set $base0C "#aaaaaa"
-set $base0D "#888888"
-set $base0E "#999999"
-set $base0F "#444444"
-
-set $red "#ff0000"
 
 bar {
    status_command i3blocks
