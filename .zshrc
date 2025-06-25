@@ -124,4 +124,5 @@ setopt hist_find_no_dups
 setopt NO_BEEP
 
 export PATH="$HOME/code/z/dgen/zig-out/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export EDITOR="nvim"
