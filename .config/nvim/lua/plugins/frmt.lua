@@ -34,7 +34,6 @@ return {
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         html = { 'prettierd', 'prettier', stop_after_first = true },
         css = { 'prettierd', 'prettier', stop_after_first = true },
-        rust = { 'rust-analyzer', lsp_format = 'fallback' },
         php = { 'pint', 'php_cs_fixer', stop_after_first = true },
         go = { 'gofmt', 'goimports', 'gofumpt', stop_after_first = true },
       },

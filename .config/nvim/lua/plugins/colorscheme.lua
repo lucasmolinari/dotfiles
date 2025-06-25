@@ -22,18 +22,21 @@ local schemes = {
   { 'catppuccin/nvim', name = 'catppuccin' },
   {
     'metalelf0/base16-black-metal-scheme',
-    name = 'base16-black-metal',
+    name = 'base16-black-metal-immortal',
   },
 }
 
-local curr = 'base16-black-metal'
+local curr = 'base16-black-metal-immortal'
 return {
   (function()
     for _, scheme in ipairs(schemes) do
       if scheme.name == curr then
         scheme.init = function()
           vim.cmd.colorscheme(scheme.name)
-          vim.cmd.hi 'Comment gui=none'
+          if string.sub(curr, 1, #'base16-black-metal') == 'base16-black-metal' then
+            vim.api.nvim_set_hl(0, 'Pmenu', { bg = '#121212', fg = '#c1c1c1' })
+            vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#222222', fg = '#556677' })
+          end
         end
         scheme.priority = 1000
         return scheme

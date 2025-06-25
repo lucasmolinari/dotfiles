@@ -47,6 +47,6 @@ print "$full_text\n$short_text\n";
 if ($status eq 'Discharging' && $percent < 15) {
     print "#FF0000\n";
 } else {
-    print "#dd9999\n";
+    print "#7899bb\n";
 }
 exit(0);

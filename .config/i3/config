@@ -10,14 +10,18 @@ set $base06 "#999999"
 set $base07 "#c1c1c1"
 set $base08 "#5f8787"
 set $base09 "#aaaaaa"
-set $base0A "#a06666"
-set $base0B "#dd9999"
+
+# set $base0A "#a06666"
+# set $base0B "#dd9999"
+set $base0A "#556677"
+set $base0B "#7899bb"
+
 set $base0C "#aaaaaa"
 set $base0D "#888888"
 set $base0E "#999999"
 set $base0F "#444444"
+set $red "#ff1122"
 
-set $red "#ff0000"
 set $mod Mod4
 set $modalt Mod1
 set $TERMINAL /sbin/kitty
@@ -28,9 +32,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 
-exec_always --no-startup-id feh --bg-fill $HOME/Images/lain.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/dh-ig.png
 
-exec --no-startup-id ~/scripts/sh/display.sh eDP HDMI-A-0 left underscan
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -146,7 +149,7 @@ bar {
    }
 }
 
-client.focused          $base08 $base08 $base07 $base03
+client.focused          $base0A $base08 $base07 $base03
 client.unfocused        $base02 $base02 $base07 $base03
 client.focused_inactive $base02 $base02 $base07 $base03
 client.urgent           $red    $red    $base07 $red

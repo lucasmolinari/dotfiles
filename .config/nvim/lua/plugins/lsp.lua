@@ -13,6 +13,11 @@ return {
   },
   { 'Bilal2453/luvit-meta', lazy = true },
   {
+    'mrcjkb/rustaceanvim',
+    version = '^6',
+    lazy = false,
+  },
+  {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
