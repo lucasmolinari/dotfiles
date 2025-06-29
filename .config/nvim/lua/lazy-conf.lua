@@ -19,6 +19,7 @@ require('lazy').setup {
   require 'plugins.git',
   require 'plugins.flash',
   require 'plugins.yazi',
+  require 'plugins.neorg',
 
   require 'plugins.etc',
   require 'plugins.colorscheme',

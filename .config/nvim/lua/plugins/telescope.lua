@@ -75,6 +75,10 @@ return {
         builtin.find_files { cwd = '~/code' }
       end, { desc = '[S]earch [P]rojects directory' })
 
+      vim.keymap.set('', '<leader>so', function()
+        builtin.find_files { cwd = '~/neorg/notes' }
+      end, { desc = '[S]earch Ne[O]rg' })
+
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
     end,
