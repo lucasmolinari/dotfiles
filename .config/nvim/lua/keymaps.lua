@@ -1,5 +1,3 @@
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -26,6 +24,18 @@ vim.api.nvim_set_keymap('n', '<leader>b', '', { noremap = true, silent = true, d
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = '[D]elete current buffer' })
 
 vim.api.nvim_set_keymap('n', '<leader>bc', ':let @+ = expand("%:p")<CR>', { noremap = true, silent = true, desc = '[C]opy current buffer' })
+
+vim.keymap.set('n', '<Esc>', function()
+  -- Clear search highlight
+  vim.cmd 'nohlsearch'
+
+  -- Close floating windows
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_get_config(win).relative ~= '' then
+      vim.api.nvim_win_close(win, true)
+    end
+  end
+end, { silent = true })
 
 -- Bufferline
 vim.api.nvim_set_keymap('n', 'H', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true, desc = 'Move focus to left buffer' })
