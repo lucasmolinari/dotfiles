@@ -80,6 +80,8 @@ return {
         builtin.find_files { cwd = '~/neorg/notes' }
       end, { desc = '[S]earch Ne[O]rg' })
 
+      vim.keymap.set('n', '<leader>st', ':TodoTelescope<CR>', { desc = '[S]earch [T]odo comments' })
+
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
     end,

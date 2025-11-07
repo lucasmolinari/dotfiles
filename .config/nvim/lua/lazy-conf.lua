@@ -20,6 +20,7 @@ require('lazy').setup {
   require 'plugins.flash',
   require 'plugins.yazi',
   require 'plugins.neorg',
+  require 'plugins.copilot',
 
   require 'plugins.etc',
   require 'plugins.colorscheme',
