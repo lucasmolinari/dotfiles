@@ -1,3 +1,8 @@
+[character]
+success_symbol = "[](bright-red)"
+error_symbol = "[](red)"
+vimcmd_symbol = "[](bright-yellow)"
+
 [c]
 symbol = " "
 format = '\[[$symbol($version(-$name))]($style)\]'
