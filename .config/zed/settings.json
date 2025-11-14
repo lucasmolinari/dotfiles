@@ -1,12 +1,17 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
   "agent": {
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-5-mini"
     },
-    "model_parameters": []
+    "model_parameters": [
+      {
+        "temperature": 0.2
+      }
+    ]
   },
   "telemetry": {
     "diagnostics": false,
@@ -19,13 +24,18 @@
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light",
-    "dark": "Serendipity Midnight"
+    "dark": "Chocolate Dark"
   },
 
   "vim_mode": true,
   "relative_line_numbers": true,
   "vim": {
     "use_system_clipboard": "on_yank"
+  },
+
+  "minimap": {
+    "show": "always",
+    "current_line_highlight": "line"
   },
 
   "ensure_final_newline_on_save": false,
