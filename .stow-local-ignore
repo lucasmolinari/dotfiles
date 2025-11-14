@@ -1,3 +1,5 @@
 .git
 Makefile
 etc
+pkglist.txt
+pkglist_aur.txt
