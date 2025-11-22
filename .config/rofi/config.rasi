@@ -1,0 +1,22 @@
+configuration {
+    modi: "drun,run";
+    show-icons: false;
+    no-hotkeys: true;
+    steal-focus: true;
+    font: "JetBrainsMono Nerd Font 12";
+    terminal: "kitty";
+    kb-select-1: "";
+    kb-select-2: "";
+    kb-select-3: "";
+    kb-select-4: "";
+    kb-select-5: "";
+    kb-select-6: "";
+    kb-select-7: "";
+    kb-select-8: "";
+    kb-select-9: "";
+    kb-select-10: "";
+}
+
+//@theme "/home/lmolinari/.local/share/rofi/themes/windows11-grid-dark.rasi"
+
+@theme "/home/lmolinari/.local/share/rofi/themes/squared-nord.rasi"
