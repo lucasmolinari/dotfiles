@@ -33,18 +33,20 @@ exec --no-startup-id nm-applet
 
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
 
-exec_always --no-startup-id feh --bg-fill $HOME/Images/flowers.jpg
+output eDP-1 {
+    resolution 1920x1080
+    scale 1
+    pos 0 0 
+}
 
-exec --no-startup-id xrandr --output HDMI-2 --mode 1920x1080 --primary --rate 120
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --right-of HDMI-1
- 
 output HDMI-A-2 {
     resolution 1920x1080
     scale 1
 }
 
-output eDP-1 {
+output HDMI-2 {
     resolution 1920x1080
+    pos 1920 0
     scale 1
 }
 
@@ -53,6 +55,9 @@ input "1267:11594:ELAN_Touchscreen" {
    drag_lock enable
    map_to_output eDP-1
 }
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
