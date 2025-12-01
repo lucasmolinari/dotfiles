@@ -19,7 +19,6 @@ require('lazy').setup {
   require 'plugins.git',
   require 'plugins.flash',
   require 'plugins.yazi',
-  require 'plugins.neorg',
   require 'plugins.copilot',
 
   require 'plugins.etc',

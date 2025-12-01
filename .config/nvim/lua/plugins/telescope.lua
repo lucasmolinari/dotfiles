@@ -77,7 +77,7 @@ return {
       end, { desc = '[S]earch [P]rojects directory' })
 
       vim.keymap.set('', '<leader>so', function()
-        builtin.find_files { cwd = '~/neorg/notes' }
+        builtin.find_files { cwd = '~/notes' }
       end, { desc = '[S]earch Ne[O]rg' })
 
       vim.keymap.set('n', '<leader>st', ':TodoTelescope<CR>', { desc = '[S]earch [T]odo comments' })
