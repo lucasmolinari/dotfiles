@@ -1,0 +1,22 @@
+include ~/.config/sway/config.d/colors/gruvbox
+  
+# class                 border  bground text    indicator child_border
+client.focused          #EBDBB2 #EBDBB2 #222222 #EBD69E   #EBD69E
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+font pango:Jetbrains Mono Nerd Font 12
+output "*" bg ~/Images/wallhaven-z88yrw.jpg fill
+
+gaps inner 5
+
+for_window [class="kitty"] border pixel 1 
+for_window [class="nvim"] border pixel 1 
+
+bar {
+    swaybar_command waybar
+}

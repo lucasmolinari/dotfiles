@@ -1,0 +1,12 @@
+input "1267:11594:ELAN_Touchscreen" {
+   drag enable
+   drag_lock enable
+   map_to_output eDP-1
+}
+
+ input * {
+    xkb_layout us
+    xkb_variant intl
+    xkb_options ""
+}
+

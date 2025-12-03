@@ -1,0 +1,17 @@
+output eDP-1 {
+    resolution 1920x1080
+    scale 1
+    pos 0 0 
+}
+
+output HDMI-A-2 {
+    resolution 1920x1080
+    scale 1
+}
+
+output HDMI-2 {
+    resolution 1920x1080
+    pos 1920 0
+    scale 1
+}
+
