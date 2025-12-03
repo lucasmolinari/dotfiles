@@ -44,7 +44,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  border-top: 2px solid #c9545d;
+  border-top: 2px solid #ebd69e;
 }
 
 #workspaces button {
@@ -56,17 +56,17 @@ button:hover {
 }
 
 #workspaces button.focused {
-  /* box-shadow: inset 0 -2px #c9545d; */
+  /* box-shadow: inset 0 -2px #ebd69e; */
   background-color: rgba(0, 0, 0, 0.3);
-  color: #c9545d;
-  border-top: 2px solid #c9545d;
+  color: #ebd69e;
+  border-top: 2px solid #ebd69e;
 }
 
 #workspaces button.active {
-  /*    box-shadow: inset 0 -2px #c9545d; */
+  /*    box-shadow: inset 0 -2px #ebd69e; */
   background-color: rgba(0, 0, 0, 0.3);
-  color: #c9545d;
-  border-top: 2px solid #c9545d;
+  color: #ebd69e;
+  border-top: 2px solid #ebd69e;
 }
 
 #workspaces button.urgent {
