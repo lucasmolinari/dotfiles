@@ -17,6 +17,8 @@ bindsym $mod+Shift+s exec --no-startup-id rofi -show ssh
 
 bindsym Print exec grim -g "$(slurp)" - | swappy -f -
 
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 # --- Scratchpad ---
 
 bindsym $mod+t scratchpad show
