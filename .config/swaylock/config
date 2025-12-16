@@ -1,0 +1,7 @@
+image=~/Images/wallhaven-l3v7ky.jpg
+
+daemonize
+ignore-empty-password
+show-keyboard-layout
+indicator-caps-lock
+font=Jetbrains Mono Nerd Font 12
