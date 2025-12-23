@@ -87,6 +87,7 @@ zle -N _zsh_cli_fg
 bindkey '^Z' _zsh_cli_fg
 
 # Alias
+alias tree='eza -T --icons --color=always'
 alias ls='eza --icons --color=always'
 alias ll='eza -l --icons --color=always'
 alias la='eza -a --icons --color=always'
