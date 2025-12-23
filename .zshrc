@@ -91,6 +91,10 @@ alias tree='eza -T --icons --color=always'
 alias ls='eza --icons --color=always'
 alias ll='eza -l --icons --color=always'
 alias la='eza -a --icons --color=always'
+
+alias cat='bat --theme=base16'
+alias fzf='fzf --preview "bat --theme=base16 --color=always --line-range=:500 {}"'
+
 alias spectacle='spectacle -bcr'
 alias lgit='lazygit'
 
