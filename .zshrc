@@ -87,7 +87,9 @@ zle -N _zsh_cli_fg
 bindkey '^Z' _zsh_cli_fg
 
 # Alias
-alias ls='ls --color'
+alias ls='eza --icons --color=always'
+alias ll='eza -l --icons --color=always'
+alias la='eza -a --icons --color=always'
 alias spectacle='spectacle -bcr'
 alias lgit='lazygit'
 
