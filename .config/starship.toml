@@ -1,7 +1,7 @@
 [character]
-success_symbol = "[](bright-red)"
-error_symbol = "[](red)"
-vimcmd_symbol = "[](bright-yellow)"
+success_symbol = "[λ](bright-red)"
+error_symbol = "[λ](red)"
+vimcmd_symbol = "[λ](bright-yellow)"
 
 [c]
 symbol = " "
