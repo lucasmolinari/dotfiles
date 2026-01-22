@@ -98,6 +98,10 @@ alias fzf='fzf --preview "bat --theme=base16 --color=always --line-range=:500 {}
 alias spectacle='spectacle -bcr'
 alias lgit='lazygit'
 
+alias start='sudo systemctl start'
+alias stop='sudo systemctl stop'
+alias status='sudo systemctl status'
+
 alias kus='setxkbmap -layout us -variant intl'
 alias kbr='setxkbmap -model abnt2 -layout br -variant abnt2'
 alias kst='xmodmap -e "keycode 62 = dead_tilde"'
