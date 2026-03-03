@@ -99,6 +99,7 @@ alias spectacle='spectacle -bcr'
 alias lgit='lazygit'
 
 alias start='sudo systemctl start'
+alias restart='sudo systemctl restart'
 alias stop='sudo systemctl stop'
 alias status='sudo systemctl status'
 
