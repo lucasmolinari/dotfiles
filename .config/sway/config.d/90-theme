@@ -10,9 +10,13 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 font pango:Jetbrains Mono Nerd Font 12
-output "*" bg ~/Images/wallhaven-z88yrw.jpg fill
+output "*" bg ~/Images/1325118.png fill
 
 gaps inner 5
+
+default_border pixel 1
+default_floating_border pixel 1
+# hide_edge_borders both
 
 for_window [class="kitty"] border pixel 1 
 for_window [class="nvim"] border pixel 1 
