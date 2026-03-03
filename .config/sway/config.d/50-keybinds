@@ -29,6 +29,13 @@ for_window [app_id="org.kde.kate"] {
     resize set 1800 800
 }
 
+for_window [app_id="obsidian"] {
+    move scratchpad
+    move position center
+    scratchpad show
+    resize set 1800 800
+}
+
 # --- General ---
 bindsym $mod+Shift+q kill
 
