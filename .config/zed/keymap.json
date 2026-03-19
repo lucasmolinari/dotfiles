@@ -4,14 +4,14 @@
   {
     "context": "!Editor",
     "bindings": {
-      "ctrl-p": null
-    }
+      "ctrl-p": null,
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-k ctrl-s": null
-    }
+      "ctrl-k ctrl-s": null,
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
@@ -24,14 +24,14 @@
       "space q": "diagnostics::Deploy",
       "space n": "editor::GoToDiagnostic",
       "space p": "editor::GoToPreviousDiagnostic",
-      "space z": "workspace::ToggleZoom"
-    }
+      "space z": "workspace::ToggleZoom",
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
-      "p": ["vim::Paste", { "preserve_clipboard": true }]
-    }
+      "p": ["vim::Paste", { "preserve_clipboard": true }],
+    },
   },
   // search
   {
@@ -39,8 +39,8 @@
     "bindings": {
       "space s f": "file_finder::Toggle",
       "space s g": "pane::DeploySearch",
-      "space d s": "project_symbols::Toggle"
-    }
+      "space d s": "project_symbols::Toggle",
+    },
   },
   // lsp
   {
@@ -49,8 +49,8 @@
       "space r n": "editor::Rename",
       "space c a": "editor::ToggleCodeActions",
       "shift-k": "editor::Hover",
-      "g d": "editor::GoToDefinition"
-    }
+      "g d": "editor::GoToDefinition",
+    },
   },
   // buffers
   {
@@ -58,13 +58,13 @@
     "bindings": {
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
-      "space b d": "pane::CloseActiveItem"
-    }
+      "space b d": "pane::CloseActiveItem",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-k ctrl-s": "zed::OpenKeymap"
-    }
-  }
+      "ctrl-k ctrl-s": "zed::OpenKeymap",
+    },
+  },
 ]

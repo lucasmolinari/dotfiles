@@ -1,85 +1,92 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "git_panel": {
+    "dock": "right",
+    "sort_by_path": true,
+  },
+  "icon_theme": "Material Icon Theme",
   "agent": {
-    "default_profile": "ask",
-    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-chat",
     },
     "model_parameters": [
       {
-        "temperature": 0.2
-      }
-    ]
+        "temperature": 0.2,
+      },
+    ],
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "base_keymap": "VSCode",
-  "icon_theme": "Colored Zed Icons Theme Dark",
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "theme": {
     "mode": "dark",
-    "light": "Gruvbox Light",
-    "dark": "Chocolate Dark"
+    "light": "Gruvbox Light Soft",
+    "dark": "Gruvbox Dark Hard",
   },
 
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "vim": {
-    "use_system_clipboard": "on_yank"
+    "use_system_clipboard": "on_yank",
   },
 
   "minimap": {
-    "show": "always",
-    "current_line_highlight": "line"
+    "show": "auto",
+    "current_line_highlight": "line",
   },
 
   "ensure_final_newline_on_save": false,
   "inlay_hints": {
-    "enabled": false
+    "enabled": false,
   },
   "inline_code_actions": true,
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "update_debounce_ms": 450
-    }
+      "update_debounce_ms": 450,
+    },
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": false,
-    "selections_menu": false
+    "selections_menu": false,
   },
   "tabs": {
     "file_icons": true,
     "git_status": false,
-    "show_diagnostics": "errors"
+    "show_diagnostics": "errors",
   },
   "status_bar": {
-    "active_language_button": false
+    "active_language_button": false,
   },
   "file_finder": {
-    "modal_max_width": "medium"
+    "modal_max_width": "medium",
   },
   "git": {
     "inline_blame": {
       "enabled": false,
-      "delay_ms": 500
-    }
+      "delay_ms": 500,
+    },
   },
   "terminal": {
     "copy_on_select": true,
-    "dock": "right"
+    "dock": "right",
   },
   "project_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "outline_panel": { "button": false },
-  "search": { "button": false }
+  "search": { "button": false },
+  "edit_predictions": {
+    "mode": "subtle",
+  },
 }
