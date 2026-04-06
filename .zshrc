@@ -135,3 +135,18 @@ setopt NO_BEEP
 export PATH="$HOME/code/z/dgen/zig-out/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export EDITOR="nvim"
+
+# bun completions
+[ -s "/home/lmolinari/.bun/_bun" ] && source "/home/lmolinari/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# claude code
+export CLAUDE_CODE_USE_OPENAI=1
+export OPENAI_BASE_URL=https://openrouter.ai/api/v1
+export OPENAI_MODEL=google/gemini-3-flash-preview
+source ~/.env # should contain OPENAI_API_KEY
+
