@@ -8,8 +8,10 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "openrouter",
-      "model": "deepseek/deepseek-chat",
+      "effort": "high",
+      "enable_thinking": false,
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
     },
     "model_parameters": [
       {
@@ -28,7 +30,7 @@
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark Hard",
+    "dark": "Ayu Dark",
   },
 
   "vim_mode": true,
@@ -82,11 +84,17 @@
     "copy_on_select": true,
     "dock": "right",
   },
-  "project_panel": { "button": false },
+  "project_panel": {
+    "button": false,
+    "git_status_indicator": true,
+    "git_status": true,
+  },
+  "semantic_tokens": "combined",
   "collaboration_panel": { "button": false },
   "outline_panel": { "button": false },
   "search": { "button": false },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle",
   },
 }
