@@ -1,16 +1,28 @@
 // documentation: https://zed.dev/docs/key-bindings
 [
+  // navigation
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-\\": "workspace::ToggleRightDock",
+    },
+  },
   // general
   {
     "context": "!Editor",
     "bindings": {
       "ctrl-p": null,
+      "shift-escape": null,
     },
   },
   {
     "context": "Editor",
     "bindings": {
       "ctrl-k ctrl-s": null,
+      "shift-escape": null,
     },
   },
   {
