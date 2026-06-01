@@ -1,17 +1,38 @@
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "diff_view_style": "split",
+  "cli_default_open_behavior": "existing_window",
   "git_panel": {
     "dock": "right",
     "sort_by_path": true,
   },
   "icon_theme": "Material Icon Theme",
   "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1",
+      "enable_thinking": false,
+    },
+    "dock": "right",
+    "tool_permissions": {
+      "tools": {
+        "edit_file": {
+          "always_allow": [
+            {
+              "pattern": "^src/app/shared/services/",
+            },
+          ],
+        },
+        "terminal": {
+          "default": "allow",
+        },
+      },
+    },
     "default_profile": "write",
     "default_model": {
-      "effort": "high",
       "enable_thinking": false,
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-6",
+      "provider": "copilot_chat",
+      "model": "gpt-4o",
     },
     "model_parameters": [
       {
@@ -30,7 +51,7 @@
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light Soft",
-    "dark": "Ayu Dark",
+    "dark": "Gruvbox Dark Hard",
   },
 
   "vim_mode": true,
@@ -85,16 +106,24 @@
     "dock": "right",
   },
   "project_panel": {
+    "dock": "left",
     "button": false,
     "git_status_indicator": true,
     "git_status": true,
   },
   "semantic_tokens": "combined",
-  "collaboration_panel": { "button": false },
-  "outline_panel": { "button": false },
+  "collaboration_panel": { "dock": "left", "button": false },
+  "outline_panel": { "dock": "left", "button": false },
   "search": { "button": false },
   "edit_predictions": {
     "provider": "zed",
     "mode": "subtle",
+  },
+  "context_servers": {
+    "primeng": {
+      "command": "npx",
+      "args": ["-y", "@primeng/mcp"],
+      "env": {},
+    },
   },
 }
