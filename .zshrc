@@ -107,6 +107,9 @@ alias kbr='setxkbmap -model abnt2 -layout br -variant abnt2'
 
 alias mysql='mariadb'
 
+alias vim='nvim'
+alias v='nvim'
+
 # Style
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
@@ -135,6 +138,7 @@ setopt NO_BEEP
 export PATH="$HOME/code/z/dgen/zig-out/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 
 # bun completions
 [ -s "/home/lmolinari/.bun/_bun" ] && source "/home/lmolinari/.bun/_bun"
@@ -148,3 +152,11 @@ export CLAUDE_CODE_USE_OPENAI=1
 export OPENAI_BASE_URL=https://openrouter.ai/api/v1
 export OPENAI_MODEL=google/gemini-3-flash-preview
 export OPENAI_API_KEY=$(cat ~/.secrets/openrouter_key) # should have the key in plain text
+
+# cursor
+export PATH="$PATH:/usr/share/cursor/bin"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/lmolinari/.lmstudio/bin"
+# End of LM Studio CLI section
+
