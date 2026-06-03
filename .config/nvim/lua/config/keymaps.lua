@@ -1,3 +1,13 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- save without formatting
+vim.keymap.set({ "n", "x" }, "<C-n><C-s>", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local autoformat = vim.b[bufnr].autoformat
+
+  vim.b[bufnr].autoformat = false
+  local ok, err = pcall(vim.cmd.write)
+  vim.b[bufnr].autoformat = autoformat
+
+  if not ok then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Save Without Formatting" })
