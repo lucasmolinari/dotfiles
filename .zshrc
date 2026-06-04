@@ -169,3 +169,5 @@ export PATH="$PATH:/usr/share/cursor/bin"
 export PATH="$PATH:/home/lmolinari/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# cargo binaries
+export PATH="$HOME/.cargo/bin:$PATH"
