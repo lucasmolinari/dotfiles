@@ -110,6 +110,15 @@ alias mysql='mariadb'
 alias vim='nvim'
 alias v='nvim'
 
+uzf() {
+  for f in "$@"; do
+    dir="${f%.zip}"
+
+    mkdir -p "$dir" && printf 'Created directory: %s\n' "$dir"
+    unzip "$f" -d "$dir"
+  done
+}
+
 # Style
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
