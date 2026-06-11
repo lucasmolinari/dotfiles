@@ -11,3 +11,15 @@ vim.keymap.set({ "n", "x" }, "<C-n><C-s>", function()
     vim.notify(err, vim.log.levels.ERROR)
   end
 end, { desc = "Save Without Formatting" })
+
+vim.keymap.set("n", "<leader>n", function()
+  vim.diagnostic.jump({
+    count = vim.v.count1,
+    severity = { min = vim.diagnostic.severity.WARN },
+    float = true,
+  })
+end, { desc = "Next Warning/Error" })
+
+vim.keymap.set("n", "<leader>N", function()
+  Snacks.picker.notifications()
+end, { desc = "Notification History" })
