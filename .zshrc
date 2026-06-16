@@ -110,6 +110,8 @@ alias mysql='mariadb'
 alias vim='nvim'
 alias v='nvim'
 
+alias venv='source .venv/bin/activate'
+
 uzf() {
   for f in "$@"; do
     dir="${f%.zip}"
