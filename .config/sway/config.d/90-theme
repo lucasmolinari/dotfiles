@@ -10,7 +10,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 font pango:Jetbrains Mono Nerd Font 12
-output "*" bg ~/Images/1325118.png fill
+output "*" bg ~/Pictures/1325118.png fill
 
 gaps inner 5
 
