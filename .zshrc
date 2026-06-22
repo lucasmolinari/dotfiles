@@ -173,3 +173,6 @@ export PATH="$PATH:/home/lmolinari/.lmstudio/bin"
 
 # cargo binaries
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# local secrets
+[ -f "$HOME/.secrets/.env" ] && source "$HOME/.secrets/.env"
