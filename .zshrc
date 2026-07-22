@@ -158,12 +158,6 @@ export SUDO_EDITOR="nvim"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# claude code
-export CLAUDE_CODE_USE_OPENAI=1
-export OPENAI_BASE_URL=https://openrouter.ai/api/v1
-export OPENAI_MODEL=google/gemini-3-flash-preview
-export OPENAI_API_KEY=$(cat ~/.secrets/openrouter_key) # should have the key in plain text
-
 # cursor
 export PATH="$PATH:/usr/share/cursor/bin"
 
