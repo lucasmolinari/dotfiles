@@ -4,3 +4,6 @@ etc
 pkglist.txt
 pkglist_aur.txt
 README.md
+.stow-local-ignore
+.secrets
+scripts
