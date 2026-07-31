@@ -110,6 +110,8 @@ alias mysql='mariadb'
 alias vim='nvim'
 alias v='nvim'
 
+alias oc='openclaude'
+
 alias venv='source .venv/bin/activate'
 
 uzf() {
