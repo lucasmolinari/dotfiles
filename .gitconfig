@@ -1,0 +1,29 @@
+[user]
+	name = Lucas Molinari
+	email = lucas.molinari2003@gmail.com
+	signingkey = 2133ECE3078F99BA
+[core]
+	editor = vim
+	fileMode = false
+[init]
+	defaultBranch = main
+[credential]
+	credentialStore = gpg
+	guiPrompt = false
+	helper = /usr/lib/git-core/git-credential-libsecret
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[commit]
+	gpgSign = true
+[pull]
+	rebase = false
+	default = current
+[push]
+	default = current
+	gpgsign = false
+[branch]
+	autosetuprebase = always
+[fetch]
+	prune = true
+[merge]
+	ff = false
