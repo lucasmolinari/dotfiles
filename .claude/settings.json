@@ -1,0 +1,12 @@
+{
+  "env": {},
+  "model": "openrouter/free",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "'/home/lmolinari/.morph/bin/morphrouter' statusline",
+    "padding": 0
+  }
+}

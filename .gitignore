@@ -1,2 +1,3 @@
 .secrets/
 *.env
+.config/opencode/node_modules/
