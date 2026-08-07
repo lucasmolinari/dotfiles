@@ -97,4 +97,5 @@ in one line — usually it means the change is wider than it should be, and that
 - Use `ponytail` for implementation and refactoring tasks.
 - Use `stop-slop` when drafting or editing prose intended for humans.
 - Use `caveman` only when concise agent-to-user output is more important than readability.
+- Use `debug-agent` when debugging behavior, outputs and bugs.
 - Do not invoke these skills when they conflict with task-specific instructions.
