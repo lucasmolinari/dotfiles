@@ -94,8 +94,12 @@ in one line — usually it means the change is wider than it should be, and that
 
 ## Default skills
 
-- Use `ponytail` for implementation and refactoring tasks.
 - Use `stop-slop` when drafting or editing prose intended for humans.
 - Use `caveman` only when concise agent-to-user output is more important than readability.
-- Use `debug-agent` when debugging behavior, outputs and bugs.
+- Use `diagnosing-bugs` when debugging behavior, outputs and bugs.
+- Use `grilling` when the user wants to stress-test a plan, decision, or idea.
+- Use `code-research` to research open-source repositories and understand how something is built.
+- Use `feature-research` to research existing architecture before implementing a complex feature.
+- Use `step` to work in the smallest next step, staying in the loop with browser-first TDD.
+- Use `find-skills` when the user asks how to do X or is looking for functionality that might exist as an installable skill.
 - Do not invoke these skills when they conflict with task-specific instructions.
