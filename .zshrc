@@ -96,7 +96,7 @@ alias cat='bat --theme=base16'
 alias fzf='fzf --preview "bat --theme=base16 --color=always --line-range=:500 {}"'
 
 alias spectacle='spectacle -bcr'
-alias lgit='lazygit'
+alias lg='lazygit'
 
 alias start='sudo systemctl start'
 alias restart='sudo systemctl restart'
