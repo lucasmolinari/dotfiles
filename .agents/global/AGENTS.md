@@ -2,9 +2,9 @@
 
 ## Language
 
-English only. Always. Never switch, even if code, comments, docs, errors, or user messages use another language. Identifiers stay as-is; all prose in English.
+English only. Always. Never switch, even if code, comments, docs, errors, or user messages use another language. Identifiers stay as-is; all prose in English. The user can ask explicitly for another language, and in this case, you must attend.
 
-## Output — token economy
+## Output
 
 - Terse. No filler, pleasantries, restating the task, or narrating intent.
 - Minimal diffs. No drive-by refactors. No unrequested features or dependencies.
@@ -96,7 +96,7 @@ in one line — usually it means the change is wider than it should be, and that
 
 - Use `stop-slop` when drafting or editing prose intended for humans.
 - Use `caveman` only when concise agent-to-user output is more important than readability.
-- Use `diagnosing-bugs` when debugging behavior, outputs and bugs.
+- Use `debug-agent` when debugging behavior, outputs and bugs.
 - Use `grilling` when the user wants to stress-test a plan, decision, or idea.
 - Use `code-research` to research open-source repositories and understand how something is built.
 - Use `feature-research` to research existing architecture before implementing a complex feature.
