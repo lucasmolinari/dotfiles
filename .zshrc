@@ -173,3 +173,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # local secrets
 [ -f "$HOME/.secrets/.env" ] && source "$HOME/.secrets/.env"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/lmolinari/.local/bin:$PATH"
