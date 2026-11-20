@@ -34,13 +34,15 @@ exec --no-startup-id picom
 
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc 
 
-exec_always --no-startup-id feh --bg-fill $HOME/Images/flowers.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/hills.jpg
 
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --scale 1
 exec --no-startup-id xrandr --output HDMI-2 --mode 1920x1080 --pos 1920x0 --scale 1
 
 exec --no-startup-id xinput set-prop "ELAN Touchscreen" --type=float "Coordinate Transformation Matrix" 0.5 0 0  0 1 0  0 0 1
 exec --no-startup-id xinput map-to-output "ELAN Touchscreen" eDP-1
+
+exec --no-startup-id setxkbmap -layout us -variant intl -option ''
  
 
 set $refresh_i3status killall -SIGUSR1 i3status

@@ -12,6 +12,8 @@ vim.keymap.set({ "n", "x" }, "<C-n><C-s>", function()
   end
 end, { desc = "Save Without Formatting" })
 
+vim.keymap.set("n", "<F5>", "<cmd>edit!<cr>", { desc = "Reload File" })
+
 vim.keymap.set("n", "<leader>n", function()
   vim.diagnostic.jump({
     count = vim.v.count1,

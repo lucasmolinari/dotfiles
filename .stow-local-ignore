@@ -1,4 +1,5 @@
 .git
+.gitignore
 Makefile
 etc
 pkglist.txt

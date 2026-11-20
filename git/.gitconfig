@@ -27,3 +27,5 @@
 	prune = true
 [merge]
 	ff = false
+[safe]
+	directory = /home/lmolinari/code/probe/build

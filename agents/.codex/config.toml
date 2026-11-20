@@ -1,5 +1,5 @@
 model = "gpt-5.6-luna"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "high"
 plan_mode_reasoning_effort = "xhigh"
 approvals_reviewer = "auto_review"
 [projects."/home/lmolinari/code/rust/rbe26"]
@@ -83,6 +83,12 @@ trust_level = "trusted"
 [projects."/home/lmolinari"]
 trust_level = "trusted"
 
+[projects."/home/lmolinari/code/k4sw/ce-auto"]
+trust_level = "trusted"
+
+[projects."/home/lmolinari/code/puc/arquitetura_apis/hands-on-arq-apis"]
+trust_level = "trusted"
+
 [tui]
 theme = "gruvbox-dark"
 session_picker_view = "comfortable"
@@ -90,6 +96,7 @@ session_picker_view = "comfortable"
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
+gpt-6-astra = 1
 
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
@@ -113,3 +120,29 @@ url = "https://developers.openai.com/mcp"
 
 [notice]
 hide_rate_limit_model_nudge = true
+
+[hooks.state]
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:2133f5b31cc98bf0dd46f256254a9705fd4bc51c06871a96b69d4b7ec798ce32"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:permission_request:0:0"]
+trusted_hash = "sha256:c5b9398ab793d8088e5f32dc42fab2aeeddb8750614dfd330544cd4587e052ec"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:1c4ae3f4f3c4b9e6eea30d0847ebfc4882a4d8b15969182a1c8519bc18c5100d"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:fc07443f95c4c3002617e1953c8ef906f147de6b1191e39ab62f259cb00222bf"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:8d621a03e863cddc8ba5dcfe227040f3f84f8a23403113dd0ce4ba52bdbd6a8a"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:subagent_start:0:0"]
+trusted_hash = "sha256:17e829bb6714cbcf1f7ae4ee6ca5acfdf8cce6b89adf2794b5ecea37c095bff4"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:subagent_stop:0:0"]
+trusted_hash = "sha256:7a21aaf93ba8d06b6b01c8a450aa14bc8353470e75d9e3cee2372be0343fc703"
+
+[hooks.state."/home/lmolinari/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:2ad9a41760801fe1c06c09616674f91f280db089705e98453b48fe02c59f67fd"

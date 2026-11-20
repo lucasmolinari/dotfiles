@@ -7,7 +7,7 @@ client.placeholder      #000000 #101820 #6C8172 #000000   #101820
 client.background       #101820
 
 font pango:Jetbrains Mono Nerd Font 12
-output "*" bg ~/Pictures/hills.jpg fill
+output "*" bg ~/Pictures/wallhaven-49lpp8.jpg fill
 
 gaps inner 5
 

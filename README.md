@@ -1,45 +1,33 @@
 # Dotfiles
 
-Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Stow creates *symlinks* in `$HOME` from the directory structure inside each package. Top-level dirs are packages; internal paths mirror their target in `$HOME`.
+Dotfiles use [GNU Stow](https://www.gnu.org/software/stow/). Each named top-level directory is a package; its contents mirror `$HOME`.
 
 ```
-stow .config/nvim       # ~/.config/nvim -> ~/dotfiles/.config/nvim
-stow .                  # symlink all packages
+stow terminal
+stow .                         # stow every package
 ```
 
-Use `.stow-local-ignore` to exclude paths.
+`.stow-local-ignore` excludes repository metadata and non-home files.
+
+| Package | Target paths |
+|---|---|
+| `agents` | `~/.agents`, `~/.claude`, `~/.codex`, `~/.config/opencode`, `~/.openclaude` |
+| `desktop` | `~/.config/{dunst,i3,i3blocks,rofi,sway,swaylock,waybar}` |
+| `editors` | `~/.emacs.d`, `~/.config/{nvim,zed}` |
+| `git` | `~/.gitconfig` |
+| `terminal` | `~/.tmux.conf`, `~/.zshrc`, `~/.config/{foot,kitty,starship.toml}` |
 
 ## Agent configuration
 
-### Architecture
-
-Edit one canonical rules file — all agents read it via a symlink chain:
+Edit one canonical rules file. All agents read it through symlinks:
 
 ```
-dotfiles/.agents/global/AGENTS.md        ← real file
-  ├── .config/opencode/AGENTS.md         (symlink → ../../.agents/global/AGENTS.md)
-  ├── .claude/CLAUDE.md                  (symlink → ../.agents/global/AGENTS.md)
-  ├── .openclaude/CLAUDE.md              (symlink → ../.agents/global/AGENTS.md)
-  └── .codex/AGENTS.md                   (symlink → ../.agents/global/AGENTS.md)
+dotfiles/agents/.agents/global/AGENTS.md       ← real file
+  ├── agents/.config/opencode/AGENTS.md        (symlink → ../../.agents/global/AGENTS.md)
+  ├── agents/.claude/CLAUDE.md                 (symlink → ../.agents/global/AGENTS.md)
+  ├── agents/.openclaude/CLAUDE.md             (symlink → ../.agents/global/AGENTS.md)
+  └── agents/.codex/AGENTS.md                  (symlink → ../.agents/global/AGENTS.md)
 ```
-
-### Directory layout
-
-| Path | Type | Managed by |
-|---|---|---|
-| `dotfiles/.agents/global/AGENTS.md` | Real file — canonical rules | Git |
-| `dotfiles/.config/opencode/AGENTS.md` | Symlink → `../../.agents/global/AGENTS.md` | Git |
-| `dotfiles/.claude/CLAUDE.md` | Symlink → `../.agents/global/AGENTS.md` | Git |
-| `dotfiles/.openclaude/CLAUDE.md` | Symlink → `../.agents/global/AGENTS.md` | Git |
-| `dotfiles/.codex/AGENTS.md` | Symlink → `../.agents/global/AGENTS.md` | Git |
-| `dotfiles/.config/opencode/` | Agent config, plugins, commands | Git + stow |
-| `dotfiles/.claude/settings.json` | Claude settings | Git + stow |
-| `dotfiles/.openclaude/settings.json` | OpenClaude settings | Git + stow |
-| `dotfiles/.codex/config.toml` | Codex settings | Git + stow |
-
-### Editing global rules
-
-Edit `dotfiles/.agents/global/AGENTS.md`. All four agents read it through the chain. No copies, no syncing.
 
 ### Installing external skills
 
@@ -52,13 +40,12 @@ npx skills sync
 
 ```
 cd ~/dotfiles
-stow .                                    # create all symlinks
-(cd ~/.config/opencode && npm install)    # opencode plugin deps
-npx skills sync                           # reinstall external skills
+stow .
+(cd agents/.config/opencode && npm install)
+npx skills sync
 ```
 
 ### Notes
 
-- Cursor MCP config (`~/.cursor/mcp.json`) is **not** stowed — contains API keys.
-- `node_modules/` under `.config/opencode/` is gitignored.
-- Pre-migration backup: `~/agent-config-backup-20260728.tar.gz`.
+- Cursor MCP config (`~/.cursor/mcp.json`) is not stowed because it contains API keys.
+- `agents/.config/opencode/node_modules/` is gitignored.
