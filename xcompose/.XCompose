@@ -1,0 +1,5 @@
+include "%L"
+
+# Portuguese cedilla with the US International apostrophe dead key.
+<dead_acute> <c> : "ç" ccedilla
+<dead_acute> <C> : "Ç" Ccedilla
