@@ -1,0 +1,159 @@
+[audio]
+enable_screenshot_sounds = false
+
+[bar.default]
+center = [ "clock", "weather", "date" ]
+end = [
+    "media",
+    "clipboard",
+    "bluetooth",
+    "volume",
+    "network",
+    "battery",
+    "spacer_desktop_actions",
+    "notifications",
+    "control-center",
+    "session"
+]
+margin_ends = 0
+radius = 4
+start = [ "launcher", "wallpaper", "workspaces", "spacer_cpu_ram", "cpu", "ram" ]
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-2" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_media_controls = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_media_controls = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+button_borders = false
+card_borders = false
+corner_radius_scale = 0.55000000819563866
+font_family = "JetBrainsMono NF"
+input_borders = false
+show_close_buttons = false
+
+    [shell.screenshot]
+    annotate = true
+
+[theme]
+builtin = "Ayu"
+community_palette = "Oxocarbon"
+mode = "dark"
+wallpaper_scheme = "m3-tonal-spot"
+
+[wallpaper]
+directory = "/home/lmolinari/Pictures"
+
+    [wallpaper.default]
+    path = "/home/lmolinari/Pictures/wallhaven-zpvdzv_1920x1080.png"
+
+    [wallpaper.last]
+    path = "/home/lmolinari/Pictures/wallhaven-zpvdzv_1920x1080.png"
+
+    [wallpaper.monitors.HDMI-A-2]
+    path = "/home/lmolinari/Pictures/wallhaven-zpvdzv_1920x1080.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/lmolinari/Pictures/wallhaven-zpvdzv_1920x1080.png"
+
+[widget.cpu]
+show_glyph = false
+
+[widget.date]
+format = "{:%d/%m/%Y}"
+
+[widget.media]
+hide_when_idle = true
+hide_when_no_media = true
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+show_glyph = false
+
+[widget.spacer_cpu_ram]
+type = "spacer"
+
+[widget.spacer_desktop_actions]
+type = "spacer"
+
+[widget.weather]
+capsule = true
+capsule_fill = "tertiary_container"
+capsule_opacity = 0.44
+capsule_padding = 10
+show_condition = false
+
+[widget.workspaces]
+active_pill_size = 0.25
+empty_color = "tertiary_container"
+focused_color = "tertiary"
+hide_when_empty = true
+occupied_color = "tertiary_container"
