@@ -66,14 +66,16 @@ screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png"
 
 animations {}
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
-    default-column-width { proportion 0.8; }
 }
 
-// Keep the coding layout close to the former Sway arrangement.
+window-rule {
+    match app-id=r#"firefox$"#
+    default-column-width { proportion 0.95; }
+}
+
 window-rule {
     match app-id=r#"^Emacs$"#
     default-column-width { proportion 0.8; }
@@ -84,12 +86,10 @@ binds {
     // "Mod" is Super in a normal Niri session and Alt when nested.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Sway-compatible application and lock bindings.
     Mod+Return hotkey-overlay-title="Open Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Open Noctalia Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+Shift+S hotkey-overlay-title="Lock and Suspend" { spawn-sh "swaylock --config ~/.config/swaylock/config & systemctl suspend"; }
+    Mod+Shift+S hotkey-overlay-title="Lock and Suspend" { spawn-sh "noctalia msg session lock"; }
 
-    // Audio and brightness controls match the former Sway 5% steps.
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -176,7 +176,6 @@ binds {
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp { move-column-left; }
 
-    // Preserve the former Sway workspace chords. Niri workspace indices are dynamic.
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
