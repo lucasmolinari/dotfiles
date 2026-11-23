@@ -78,7 +78,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^Emacs$"#
-    default-column-width { proportion 0.8; }
+    default-column-width { proportion 0.7; }
 }
 
 binds {
@@ -234,6 +234,6 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    // Move the focused window/column to the other monitor.
-    Mod+P { move-column-to-monitor-next; }
+    Mod+P { move-workspace-to-monitor-next; }
+    Mod+N { focus-monitor-next; }
 }
