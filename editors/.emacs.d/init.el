@@ -1,15 +1,15 @@
 ;;; -*- lexical-binding: t; -*-
 
-'lkqjwe'
-"iklqwjeqw"
 (setq custom-file "~/.emacs.d/custom.el")
 
 (setq inhibit-startup-message t
       make-backup-files nil
       auto-save-default nil
       ring-bell-function 'ignore
-	  use-dialog-box nil)
-(setopt use-short-answers t)
+	  use-dialog-box nil
+	  vc-follow-symlinks t)
+(setopt use-short-answers t
+        frame-resize-pixelwise t)
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -26,6 +26,8 @@
 (setq display-line-numbers-type 'relative)
 
 (setq-default tab-width 4)
+(setq go-ts-mode-indent-offset 4)
+
 
 (set-frame-font "JetBrains Mono NF-12" nil t)
 
@@ -169,12 +171,21 @@
   (define-key evil-normal-state-map (kbd "M-k") #'my/eldoc-pinned-doc))
 
 ;; Code completion
+(use-package cape
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file))
+
 (use-package corfu
   :init
-  (global-corfu-mode)
+  (setq corfu-auto t
+        corfu-auto-prefix 0)
+  (global-corfu-mode))
+
+(use-package apheleia
+  :ensure t
   :config
-  (add-to-list 'completion-at-point-functions
-               #'cape-file))
+  (apheleia-global-mode +1))
 
 ;; Theme
 (add-to-list 'custom-theme-load-path
