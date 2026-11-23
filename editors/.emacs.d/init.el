@@ -85,7 +85,7 @@
   :config
   (setq evil-want-integration t)
   (evil-collection-init)
-)
+  )
 
 (use-package vertico
   :custom
@@ -119,9 +119,9 @@
 (use-package evil-nerd-commenter
   :after evil
   :bind (:map evil-normal-state-map
-         ("gcc" . evilnc-comment-or-uncomment-lines)
-         :map evil-visual-state-map
-         ("gc" . evilnc-comment-or-uncomment-lines)))
+			  ("gcc" . evilnc-comment-or-uncomment-lines)
+			  :map evil-visual-state-map
+			  ("gc" . evilnc-comment-or-uncomment-lines)))
 
 (use-package windmove
   :ensure nil)
@@ -187,8 +187,35 @@
   :config
   (apheleia-global-mode +1))
 
+
+;; Org
+(setq org-directory "~/org"
+      org-default-notes-file "~/org/inbox.org"
+	  org-agenda-files '("~/org"))
+
+(setq org-startup-indented t
+	  org-hide-emphasis-markers t
+	  org-startup-with-inline-images t
+	  org-src-fontify-natively t)
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
 ;; Theme
 (add-to-list 'custom-theme-load-path
              (expand-file-name "themes/" user-emacs-directory))
 
 (load-theme 'ayu-dark t)
+
+;; Fix typing ç instead of ć with dead acute + c (US-intl layout)
+(require 'iso-transl)
+(define-key key-translation-map [dead-acute ?c] [?ç])
+(define-key key-translation-map [dead-acute ?C] [?Ç])
+(define-key key-translation-map [mute-acute ?c] [?ç])
+(define-key key-translation-map [mute-acute ?C] [?Ç])
+(define-key key-translation-map [S-dead-acute ?c] [?ç])
+(define-key key-translation-map [S-dead-acute ?C] [?Ç])
+(define-key key-translation-map (kbd "´ c") [?ç])
+(define-key key-translation-map (kbd "´ C") [?Ç])
+(define-key iso-transl-ctl-x-8-map (kbd "' c") [?ç])
+(define-key iso-transl-ctl-x-8-map (kbd "' C") [?Ç])
