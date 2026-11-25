@@ -1,11 +1,11 @@
 return {
   { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
-  { "ayu-theme/ayu-vim", name = "ayu" },
+  { "Shatur/neovim-ayu", name = "ayu" },
   { "stevedylandev/darkmatter-nvim", name = "darkmatter" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu",
+      colorscheme = "ayu-dark",
     },
   },
 }
