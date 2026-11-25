@@ -25,7 +25,8 @@
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
-(setq-default tab-width 4)
+(setq-default tab-width 4
+			  truncate-lines t)
 (setq go-ts-mode-indent-offset 4)
 
 
@@ -75,7 +76,6 @@
                                (1- (match-end 0))))))
         (or result (user-error "No quoted string found")))))
   (define-key evil-inner-text-objects-map "q" #'my/evil-inner-quote))
-;; end
 
 (setq completion-category-defaults nil
       completion-pcm-leading-wildcard t)
@@ -86,6 +86,21 @@
   (setq evil-want-integration t)
   (evil-collection-init)
   )
+
+(use-package general
+  :ensure t
+  :config
+  (general-create-definer my/leader-keys
+    :states '(normal visual motion)
+    :keymaps 'override
+    :prefix "SPC"
+    :global-prefix "C-SPC")
+
+  (my/leader-keys
+    "sf" '(find-file :which-key "find file")
+    "sr" '(recentf-open-files :which-key "recent files")
+    "sb" '(switch-to-buffer :which-key "switch buffer")
+    "bd" '(kill-current-buffer :which-key "kill buffer")))
 
 (use-package vertico
   :custom
