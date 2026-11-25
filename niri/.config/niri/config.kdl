@@ -88,6 +88,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Open Noctalia Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Shift+V hotkey-overlay-title="Open Noctalia Clipboard History" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Shift+S hotkey-overlay-title="Lock and Suspend" { spawn-sh "noctalia msg session lock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
