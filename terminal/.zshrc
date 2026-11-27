@@ -110,6 +110,8 @@ alias mysql='mariadb'
 alias vim='nvim'
 alias v='nvim'
 
+alias t='tmux'
+
 alias o='opencode --continue'
 alias oc='openclaude'
 
