@@ -25,3 +25,6 @@ end, { desc = "Next Warning/Error" })
 vim.keymap.set("n", "<leader>N", function()
   Snacks.picker.notifications()
 end, { desc = "Notification History" })
+
+vim.keymap.set({ "n", "x" }, "q:", "<nop>", { desc = "Disable command-line window" })
+vim.keymap.set({ "n", "i", "x", "s", "o", "c" }, "<F1>", "<nop>", { desc = "Disable help" })
